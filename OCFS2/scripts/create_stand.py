@@ -33,7 +33,7 @@ def create_disk(disk_format: str, name: str) -> None:
             stdout=subprocess.DEVNULL
         )
         print(f"Disk '{name}' successfully created.")
-    except subprocess.CalledProcessError as e:
+    except subprocess.CalledProcessError:
         print(f"Disk '{name}' successfully failed.")
 
 # Параметры дисков (формат, имя)
