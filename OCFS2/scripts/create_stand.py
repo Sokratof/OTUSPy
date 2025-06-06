@@ -46,7 +46,7 @@ disks = [
     ("raw", "raw_cash_unsafe"),
     ("raw", "raw_cash_directsync"),
     ("raw", "raw_cash_writeback")
-    ]
+        ]
 
 for disk_format, name in disks:
     create_disk(disk_format=disk_format, name=name)

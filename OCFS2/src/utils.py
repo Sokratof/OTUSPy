@@ -10,7 +10,7 @@ def check_command_output(
         expect: Optional[Union[List[str], str]] = None,
         should_fail: bool = False,
         negative_check: bool = False
-    ):
+        ):
     """
     :param command: Список аргументов для выполнения команды или строка команды.
     :param expect: Ожидаемый текст (строка или список строк).
