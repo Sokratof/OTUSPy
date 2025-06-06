@@ -8,6 +8,7 @@ from src.utils import check_command_output
 def ocfs2_mountpoint():
     return "/vm"
 
+
 # Проверка монтирования OCFS2
 def test_ocfs2_mounted():
     command = "mount -t ocfs2"
