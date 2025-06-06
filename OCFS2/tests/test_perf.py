@@ -13,6 +13,7 @@ PASSWORD = "1"
 TIMEOUT = 120
 PROMPT = r'[\$#] '
 
+
 @pytest.fixture(scope="module")
 def ssh_session():
     """Фикстура для создания SSH-сессии."""
@@ -25,6 +26,7 @@ def ssh_session():
         yield session
     finally:
         session.close()
+
 
 # Извлекает скорость записи
 def extract_speed(output):

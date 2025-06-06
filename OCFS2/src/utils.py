@@ -4,6 +4,7 @@ import re
 import time
 from typing import List, Optional, Union
 
+
 # Функция проверки выполнения команды
 def check_command_output(
         command: Union[List[str], str],
@@ -63,8 +64,9 @@ def check_command_output(
         pytest.fail(f"Произошла ошибка при выполнении команды: {e}")
 
 
-#Variables
+# Variables
 CONN = "qemu+tcp://sudcr1.ipa.rbt/system"
+
 
 # Функция управления ВМ
 def manage_vm(action: str, vm_name: str):
@@ -99,12 +101,12 @@ def check_load_os(vm_name: str, timeout: int):
     start_time = time.time()
     while time.time() - start_time < timeout:
         result = subprocess.run(
-            ["virsh", "-c", CONN,
-            "qemu-agent-command", vm_name,
-            '{"execute": "guest-ping"}'],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True
+        ["virsh", "-c", CONN,
+        "qemu-agent-command", vm_name,
+        '{"execute": "guest-ping"}'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True
         )
         if result.returncode == 0 and '"return":{}' in result.stdout:
             print(f"OS VM {vm_name} successfully load")

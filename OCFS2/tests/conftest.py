@@ -6,6 +6,7 @@ from OCFS2.src.graf import plot_results
 # Глобальная переменная для хранения результатов
 results_df = pd.DataFrame(columns=["disk", "speed_mb_s", "time_sec", "status"])
 
+
 def pytest_sessionfinish(session, exitstatus):
     global results_df
     print("\npytest_sessionfinish вызван.")  # Отладочный вывод
