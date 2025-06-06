@@ -1,0 +1,10 @@
+#fidcm 10.0.20.20
+#fidcr1 10.0.20.30
+#fiac 10.0.20.21
+
+Precond:
+fidcr1 sudo apt install python3-pip python3.11-venv -y
+fidcr1 python3 -m venv venv
+fidcr1 source venv/bin/activate
+fidcr1 pip install -r requirements.txt
+fidcr1 sudo apt install fio sysstat ioping -ya
